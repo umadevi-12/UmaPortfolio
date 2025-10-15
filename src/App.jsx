@@ -272,14 +272,18 @@ const App = () => {
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
+  // === UPDATED: use the same resume file ID as Home.jsx ===
+  // file id: 1BdhkBv9Boa6wqXVLfB5JCCjOuefK6kwC
   const handleResumeClick = () => {
-    window.open(
-      "https://drive.google.com/file/d/1iCDrxeXZ_oqKYqxy1j_tnil9FMNFn_FI/preview",
-      "_blank"
-    );
+    const viewUrl = "https://drive.google.com/file/d/1BdhkBv9Boa6wqXVLfB5JCCjOuefK6kwC/view?usp=sharing";
+    const downloadUrl = "https://drive.google.com/uc?export=download&id=1BdhkBv9Boa6wqXVLfB5JCCjOuefK6kwC";
 
+    // Open resume in new tab for viewing
+    window.open(viewUrl, "_blank");
+
+    // Trigger download
     const link = document.createElement("a");
-    link.href = "https://drive.google.com/uc?export=download&id=1iCDrxeXZ_oqKYqxy1j_tnil9FMNFn_FI";
+    link.href = downloadUrl;
     link.download = "Bogathi_Umadevi_Resume.pdf";
     document.body.appendChild(link);
     link.click();
