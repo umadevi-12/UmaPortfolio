@@ -61,7 +61,7 @@ const ContentWrapper = styled.div`
   align-items: center;
   width: 100%;
   max-width: 1400px;
-  gap: 2.5rem; /* slightly reduced */
+  gap: 2.5rem;
   position: relative;
   z-index: 1;
 
@@ -75,7 +75,7 @@ const ContentWrapper = styled.div`
 
 const TextSection = styled.div`
   animation: ${fadeInUp} 1s ease-out;
-  padding: 1rem; /* smaller padding */
+  padding: 1rem;
   max-width: 700px;
   text-align: center;
   position: relative;
@@ -231,7 +231,7 @@ const ImageSection = styled.div`
 
 const ImageContainer = styled.div`
   width: 230px;
-  height: 320px; /* reduced */
+  height: 320px;
   overflow: hidden;
   position: relative;
   animation: ${float} 6s ease-in-out infinite;
@@ -254,16 +254,17 @@ const ImageContainer = styled.div`
 
 const Home = () => {
   const handleResumeClick = () => {
-    const resumeUrl =
-      "https://drive.google.com/uc?export=download&id=1iCDrxeXZ_oqKYqxy1j_tnil9FMNFn_FI";
+    const viewUrl =
+      "https://drive.google.com/file/d/1BdhkBv9Boa6wqXVLfB5JCCjOuefK6kwC/view?usp=sharing";
+    const downloadUrl =
+      "https://drive.google.com/uc?export=download&id=1BdhkBv9Boa6wqXVLfB5JCCjOuefK6kwC";
 
-    window.open(
-      "https://drive.google.com/file/d/1iCDrxeXZ_oqKYqxy1j_tnil9FMNFn_FI/preview",
-      "_blank"
-    );
+    // Open resume in new tab for viewing
+    window.open(viewUrl, "_blank");
 
+    // Trigger download
     const link = document.createElement("a");
-    link.href = resumeUrl;
+    link.href = downloadUrl;
     link.download = "UB_Resume.pdf";
     document.body.appendChild(link);
     link.click();
@@ -304,10 +305,18 @@ const Home = () => {
             </ResumeButton>
 
             <SocialIcons>
-              <SocialIcon href="https://github.com/umadevi-12" target="_blank" rel="noopener noreferrer">
+              <SocialIcon
+                href="https://github.com/umadevi-12"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaGithub />
               </SocialIcon>
-              <SocialIcon href="https://www.linkedin.com/in/umadevi-bogathi-58404b312/" target="_blank" rel="noopener noreferrer">
+              <SocialIcon
+                href="https://www.linkedin.com/in/umadevi-bogathi-58404b312/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaLinkedin />
               </SocialIcon>
               <SocialIcon href="mailto:bogathiu@gmail.com">
